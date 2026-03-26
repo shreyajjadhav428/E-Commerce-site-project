@@ -19,7 +19,7 @@ function Navbar({ search, setSearch }) {
         }}
       >
         {/* Logo */}
-        <h2 style={{ color: "#f1641e", fontWeight: "bold" }}>
+        <h2 style={{ color: "#f1641e", fontWeight: "bold", fontSize:"30px" }}>
           IncyWincy
         </h2>
 
@@ -39,7 +39,7 @@ function Navbar({ search, setSearch }) {
         />
 
         {/* Right Icons */}
-        <div style={{ display: "flex", gap: "15px" }}>
+        <div style={{ display: "flex", gap: "15px", fontSize:"30px" }}>
           <span>❤️</span>
           <span>🛒</span>
           <span>👤</span>
@@ -51,7 +51,7 @@ function Navbar({ search, setSearch }) {
         style={{
           display: "flex",
           gap: "20px",
-          fontSize: "14px",
+          fontSize: "20px",
           color: "#555",
         }}
       >

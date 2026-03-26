@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
 import { fetchProducts } from "./services/productService";
+import Hero from "./components/Hero";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,15 +22,18 @@ function App() {
 
   // ✅ LOGIC MOVED HERE: Always filter data BEFORE the return statement
   const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase())
+    product.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
     <div>
       {/* Passing search state to Navbar as props */}
       <Navbar search={search} setSearch={setSearch} />
-      
-      <h1 style={{ color: "#595959",textAlign: "center" }}>Your One Stop Destination</h1>
+      <Hero />
+
+      <h1 style={{ color: "#595959", textAlign: "center" }}>
+        Your One Stop Destination
+      </h1>
 
       <div
         style={{
