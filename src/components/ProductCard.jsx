@@ -1,4 +1,4 @@
-function ProductCard({ title, price, image }) {
+function ProductCard({ title, price, image, addToCart }) {
   return (
     <div
       style={{
@@ -50,17 +50,21 @@ function ProductCard({ title, price, image }) {
 
       {/* 4. Add to Cart Button */}
       <button
+        onClick={addToCart}
         style={{
-          backgroundColor: "#595959",
-          color: "white",
-          border: "none",
+          marginTop: "10px",
+          width: "100%",
           padding: "8px",
-          borderRadius: "5px",
+          border: "none",
+          borderRadius: "8px",
+          backgroundColor: "#595959",
+          color: "#fff",
           cursor: "pointer",
         }}
       >
         Add to Cart
-      </button>
+      </button>      
+      
     </div> // The missing closing tag!
   );
 }

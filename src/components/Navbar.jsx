@@ -1,4 +1,4 @@
-function Navbar({ search, setSearch }) {
+function Navbar({ search, setSearch, cartCount, openCart }) {
   return (
     <nav
       style={{
@@ -19,7 +19,7 @@ function Navbar({ search, setSearch }) {
         }}
       >
         {/* Logo */}
-        <h2 style={{ color: "#f1641e", fontWeight: "bold", fontSize:"30px" }}>
+        <h2 style={{ color: "#f1641e", fontWeight: "bold", fontSize: "30px" }}>
           IncyWincy
         </h2>
 
@@ -39,9 +39,11 @@ function Navbar({ search, setSearch }) {
         />
 
         {/* Right Icons */}
-        <div style={{ display: "flex", gap: "15px", fontSize:"30px" }}>
+        <div style={{ display: "flex", gap: "15px", fontSize: "30px" }}>
           <span>❤️</span>
-          <span>🛒</span>
+          <span onClick={openCart} style={{ cursor: "pointer" }}>
+            🛒 ({cartCount})
+          </span>
           <span>👤</span>
         </div>
       </div>
