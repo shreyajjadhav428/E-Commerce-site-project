@@ -5,6 +5,7 @@ import { fetchProducts } from "./services/productService";
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart";
+import Recommendations from "./components/Recommendations";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -53,8 +54,11 @@ function App() {
         cartCount={cart.length}
         openCart={() => setIsCartOpen(true)}
       />
-      <Hero />
+      
       <Categories />
+      {cart.length > 0 && <Recommendations products={products} />}
+
+      <Hero />
 
       <h1 style={{ color: "#595959", textAlign: "center" }}>
         Your One Stop Destination

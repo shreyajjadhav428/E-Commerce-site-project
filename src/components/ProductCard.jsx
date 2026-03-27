@@ -2,7 +2,7 @@ function ProductCard({ title, price, image, addToCart }) {
   return (
     <div
       style={{
-        border: "1px solid #eee",
+        border: "1px solid #595959",
         borderRadius: "12px",
         padding: "15px",
         cursor: "pointer",
@@ -44,7 +44,7 @@ function ProductCard({ title, price, image, addToCart }) {
       </h3>
 
       {/* 3. The Price */}
-      <p style={{ fontWeight: "bold", color: "#f1641e", fontSize: "18px" }}>
+      <p style={{ fontWeight: "bold", color: "#595959", fontSize: "18px" }}>
         ${price}
       </p>
 
@@ -57,7 +57,7 @@ function ProductCard({ title, price, image, addToCart }) {
           padding: "8px",
           border: "none",
           borderRadius: "8px",
-          backgroundColor: "#595959",
+          backgroundColor: "#f1641e",
           color: "#fff",
           cursor: "pointer",
         }}

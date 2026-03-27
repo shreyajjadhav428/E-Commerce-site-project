@@ -1,41 +1,21 @@
-function Categories() {
-  const categories = [
-    {
-      title: "Electronics",
-      image:
-        "https://cdn.wallpapersafari.com/57/86/RzsgpO.jpg",
-    },
-    {
-      title: "Fashion",
-      image:
-        "https://www.universityoffashion.com/blog/wp-content/uploads/2019/11/Louis-Vuittons-spring-2020-show.-vogue.jpg",
-    },
-    {
-      title: "Accessories",
-      image:
-        "https://m.media-amazon.com/images/I/611ZT26wdES._AC_UF1000,1000_QL80_.jpg",
-    },
-  ];
+function Recommendations({ products }) {
+  const recommended = [...products].sort(() => 0.5 - Math.random()).slice(0, 5);
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2 style={{ marginBottom: "20px" }}>Jump into featured interests</h2>
+      <h2>Recommended for you</h2>
 
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
           gap: "20px",
+          marginTop: "10px",
         }}
       >
-        {categories.map((cat, index) => (
+        {recommended.map((product) => (
           <div
-            key={index}
-            style={{
-              borderRadius: "15px",
-              overflow: "hidden",
-              cursor: "pointer",
-            }}
+            key={product.id}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-5px)";
               e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.1)";
@@ -49,16 +29,16 @@ function Categories() {
             }}
           >
             <img
-              src={cat.image}
-              alt={cat.title}
+              src={product.image}
+              alt={product.title}
               style={{
                 width: "100%",
                 height: "150px",
-                objectFit: "cover",
+                objectFit: "contain",
+                marginBottom: "10px",
               }}
             />
-
-            <p style={{ padding: "10px", fontWeight: "bold" }}>{cat.title}</p>
+            <p>{product.title}</p>
           </div>
         ))}
       </div>
@@ -66,4 +46,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default Recommendations;
